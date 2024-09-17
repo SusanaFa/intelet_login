@@ -1,8 +1,8 @@
 {
     "deudas": [
-      { "id": 1, "fecha": "2024-09-10", "descripcion": "Factura de Luz", "monto": 30000, "estado": "Pendiente" },
-      { "id": 2, "fecha": "2024-08-20", "descripcion": "Factura de Agua", "monto": 15000, "estado": "Pagada" },
-      { "id": 3, "fecha": "2024-07-30", "descripcion": "Crédito Universitario", "monto": 120000, "estado": "Pendiente" }
+      { "id": 1, "fecha": "2024-07-10", "descripcion": "Metlife", "monto": 30000, "n_cuota": "2", "n_cuenta": "123456-0"  },
+      { "id": 2, "fecha": "2024-08-20", "descripcion": "Metlife", "monto": 15000, "n_cuota": "3", "n_cuenta": "123456-0"  },
+      { "id": 3, "fecha": "2024-10-30", "descripcion": "Metlife", "monto": 120000, "n_cuota": "4", "n_cuenta": "123456-0" }
     ]
   }
   

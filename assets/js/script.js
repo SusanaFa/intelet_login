@@ -73,6 +73,8 @@ d.addEventListener("DOMContentLoaded", function () {
 
     // Manejar el listado de deudas
     const deudaList = d.getElementById("deudas-list");
+    const pagarBtn = d.getElementById("pagar-btn");
+
     if (deudaList) {
         fetch('http://localhost:3000/deudas')
             .then(response => response.json())
@@ -80,13 +82,35 @@ d.addEventListener("DOMContentLoaded", function () {
                 deudas.forEach(deuda => {
                     deudaList.innerHTML += `
                         <tr>
-                            <td>${deuda.fecha}</td>
                             <td>${deuda.descripcion}</td>
-                            <td>${deuda.monto}</td>
-                            <td>${deuda.estado}</td>
-                            <td><a href="pago.html" class="btn btn-success">Pagar</a></td>
+                            <td>${deuda.fecha}</td>
+                            <td>${deuda.n_cuenta}</td>
+                            <td class="monto">${deuda.monto}</td>
+                            <td>${deuda.n_cuota}</td>
+                            <td><input type="checkbox" class="pay-checkbox"></td> 
                         </tr>`;
                 });
+                let total = 0; // Variable para almacenar el total
+const totalElement = d.getElementById('total'); // Contenedor donde se mostrará el total
+
+// Agregar el evento change a todos los checkboxes
+d.querySelectorAll('.pay-checkbox').forEach(checkbox => {
+    checkbox.addEventListener('change', function() {
+        const row = this.closest('tr'); // Obtener la fila de la deuda
+        const monto = parseFloat(row.querySelector('.monto').textContent); // Obtener el monto de la deuda
+
+        if (this.checked) {
+            total += monto; // Sumar el monto al total
+        } else {
+            total -= monto; // Restar el monto al total si se desmarca
+        }
+
+        // Actualizar el total en el HTML
+        totalElement.textContent = total.toFixed(2);
+        const checkboxesMarcados = d.querySelectorAll('.pay-checkbox:checked').length;
+        pagarBtn.disabled = checkboxesMarcados === 0;
+    });
+});
             })
             .catch(error => console.error('Error fetching deudas:', error));
     }

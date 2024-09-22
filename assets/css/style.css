@@ -12,7 +12,7 @@ body.filter-client {
 
 @font-face {
     font-family: 'Work Sans'; 
-    src: url('./intelet/assets/font/Work_Sans/static/WorkSans-Light.ttf') format('truetype');
+    src: url('../font/Work_Sans/static/WorkSans-Light.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }

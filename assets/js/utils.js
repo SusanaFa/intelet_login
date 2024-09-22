@@ -1,7 +1,10 @@
+//utils.js
+
 const d = document;
 
 export function showResult(message) {
-    const resultElement = d.getElementById('result');
+    // const resultElement = d.getElementById('result');
+    const resultElements = d.querySelectorAll('.result');
     resultElement.textContent = message;
 }
 
@@ -72,7 +75,7 @@ export function setupCheckboxes(pagarBtn) {
             const monto = parseFloat(row.querySelector('.monto').textContent);
 
             total += this.checked ? monto : -monto;
-            totalElement.textContent = total.toFixed(2);
+            totalElement.textContent = Math.floor(total).toString();
             pagarBtn.disabled = d.querySelectorAll('.pay-checkbox:checked').length === 0;
         });
     });

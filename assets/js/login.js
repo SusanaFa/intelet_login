@@ -1,3 +1,5 @@
+//login.js
+
 import { showResult, validarRut } from './utils.js';
 
 const d = document;
@@ -10,7 +12,8 @@ export function handleLoginSubmit(e) {
     
     const rutValue = rutInput.value;
 
-    // Validar el formato del RUT
+    // Validar el formato del RUT. incluir en login clientes
+   try {
     const rutRegex = /^[0-9]{1,2}\.[0-9]{3}\.[0-9]{3}-[0-9Kk]{1}$/;
     if (!rutRegex.test(rutValue)) {
         showResult("Formato de RUT inválido");
@@ -24,7 +27,13 @@ export function handleLoginSubmit(e) {
     } else {
         showResult("RUT inválido");
     }
+} catch (error) {
+    console.error('Error en la validación del rut: ', error);
+    showResult("ocurrió un error al validar el RUT. intente nuevamente.");
+    
+
 }
+   } 
 
 // Formatear el RUT en tiempo real
 function formatRut(e) {

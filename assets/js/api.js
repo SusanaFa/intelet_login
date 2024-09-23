@@ -5,17 +5,17 @@ import { appendDeudaRow, setupCheckboxes, showResult } from "./utils.js";
 // const d = document;
 
 //conexión a la api
-export async function fetchDeudas(deudaList, pagarBtn) {
+export async function fetchDeudas(debtsList, payBtn) {
   try {
     const response = await fetch("http://localhost:3000/deudas");
     if (!response.ok) {
       throw new Error("Error en la respuesta de la red");
     }
-    const deudas = await response.json();
-    deudas.forEach((deuda) => {
-      appendDeudaRow(deudaList, deuda);
+    const debts = await response.json();
+    debts.forEach((debt) => {
+      appendDeudaRow(debtsList, debt);
     });
-    setupCheckboxes(pagarBtn);
+    setupCheckboxes(payBtn);
   } catch (error) {
     console.error("Error fetching deudas:", error);
     showResult(

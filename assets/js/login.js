@@ -1,7 +1,7 @@
 //login.js
 
 import { showResult, hideResult } from "./utils.js";
-import { validarRut } from "./validation.js";
+import { validarRut, formatRut } from "./validation.js";
 
 const d = document;
 
@@ -41,27 +41,3 @@ export function handleLoginSubmit(e) {
   }
 }
 
-// Formatear el RUT en tiempo real
-//aun debo probarlo. la vez anterior no resultó muy bien
-function formatRut(e) {
-  let value = e.target.value;
-
-  // Eliminar caracteres no numéricos, excepto K/k
-  value = value.replace(/[^0-9Kk]/g, "");
-
-  // Formatear el RUT con puntos y guión
-  if (value.length > 2) {
-    value = value.replace(/^(\d{1,2})(\d{3})/, "$1.$2"); // Primer punto
-  }
-  if (value.length > 6) {
-    value = value.replace(/^(\d{1,2})\.(\d{3})(\d{3})/, "$1.$2.$3"); // Segundo punto
-  }
-  if (value.length > 9) {
-    value = value.replace(
-      /^(\d{1,2})\.(\d{3})\.(\d{3})([0-9Kk])/,
-      "$1.$2.$3-$4"
-    ); // Guión antes del DV
-  }
-
-  e.target.value = value;
-}

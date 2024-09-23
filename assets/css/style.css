@@ -3,7 +3,6 @@ html {
     height: 100%;
 }
 
-
 /* probando color de fondo en página de clientes. pero no me gustó
 /* lo dejaré aquí por si acaso, para no olvidar la sintaxis */
 
@@ -137,7 +136,11 @@ body.filter-client {
         max-width: none;
         min-height: auto;
     }
-
+    
+    .left-section {
+        display: none;
+    }
+    
     .right-section {
         padding: 15px;
         font-size: 14px;

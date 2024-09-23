@@ -8,17 +8,21 @@ import { showResult, hideResult } from "./utils.js";
 const d = document;
 
 d.addEventListener("DOMContentLoaded", function () {
-  const loginForm = d.getElementById("login");
+ 
+    //pagina login -- revisar
+    const loginForm = d.getElementById("login");
+  
   if (loginForm) {
     loginForm.addEventListener("submit", handleLoginSubmit);
   }
 
-  const deudaList = d.getElementById("deudas-list");
-  const pagarBtn = d.getElementById("pagar-btn");
+  //pagina deudas -- funcionando
+  const debtsList = d.getElementById("debts-list");
+  const payBtn = d.getElementById("pay-btn");
 
-  if (deudaList) {
+  if (debtsList) {
     try {
-      fetchDeudas(deudaList, pagarBtn);
+      fetchDeudas(debtsList, payBtn);
       hideResult("result-debts");
     } catch (error) {
       console.error("Error en la carga de deudas: ", error);
@@ -28,4 +32,7 @@ d.addEventListener("DOMContentLoaded", function () {
       );
     }
   }
+
+    //otras páginas por manejar
+
 });

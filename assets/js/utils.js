@@ -30,29 +30,37 @@ export function hideResult(id) {
 }
 // función que se encarga de crear la tabla de deudas
 export function appendDeudaRow(deudaList, deuda) {
-  const row = d.createElement("tr");
 
-  const descripcionCell = d.createElement("td");
+    //fila que contendrá las celdas
+  const row = d.createElement("tr"); 
+
+  //celda que tendrá el cedente - en el json es descripcion
+  const descripcionCell = d.createElement("td"); 
   descripcionCell.textContent = deuda.descripcion;
   row.appendChild(descripcionCell);
 
+  //celda que tendra la fecha de la deuda
   const fechaCell = d.createElement("td");
   fechaCell.textContent = deuda.fecha;
   row.appendChild(fechaCell);
 
+  //celda que tendrá el número de cuenta de la deuda
   const cuentaCell = d.createElement("td");
   cuentaCell.textContent = deuda.n_cuenta;
   row.appendChild(cuentaCell);
 
+  //celda que tendrá el monto
   const montoCell = d.createElement("td");
   montoCell.classList.add("monto");
   montoCell.textContent = deuda.monto;
   row.appendChild(montoCell);
 
+  //celda que tendrá el número de la cuota
   const cuotaCell = d.createElement("td");
   cuotaCell.textContent = deuda.n_cuota;
   row.appendChild(cuotaCell);
 
+  //celda que tendrá el checkbox
   const checkboxCell = d.createElement("td");
   const checkbox = d.createElement("input");
   checkbox.type = "checkbox";
@@ -60,6 +68,7 @@ export function appendDeudaRow(deudaList, deuda) {
   checkboxCell.appendChild(checkbox);
   row.appendChild(checkboxCell);
 
+  // Agrega la fila al listado de deudas
   deudaList.appendChild(row);
 }
 

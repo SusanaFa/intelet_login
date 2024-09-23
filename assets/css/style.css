@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
     height: 100%;
 }
 
@@ -7,26 +8,26 @@ body, html {
 /* lo dejaré aquí por si acaso, para no olvidar la sintaxis */
 
 body.filter-client {
-    background-color: #f0f4f8; 
+    background-color: #f0f4f8;
 }
 
 @font-face {
-    font-family: 'Work Sans'; 
+    font-family: 'Work Sans';
     src: url('../font/Work_Sans/static/WorkSans-Light.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 .container-fluid {
-    
+
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
 }
 
-.my-class{
-    background-color:  #f7f7f7;
+.my-class {
+    background-color: #f7f7f7;
     display: flex;
     flex-direction: row;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
@@ -37,8 +38,9 @@ body.filter-client {
     max-width: 1200px;
     min-height: auto;
     padding: 20px;
-    margin:40px auto;
+    margin: 40px auto;
 }
+
 .container {
     font-family: 'Work Sans', sans-serif;
     font-size: 16px;
@@ -46,8 +48,8 @@ body.filter-client {
     color: #333;
 }
 
-.container h1{
-    font-weight: bold; 
+.container h1 {
+    font-weight: bold;
     font-size: 40px;
 }
 
@@ -60,9 +62,9 @@ body.filter-client {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #dbe9f0; 
+    background-color: #dbe9f0;
     display: flex;
-    align-items: center ;
+    align-items: center;
     justify-content: center;
 }
 
@@ -102,7 +104,7 @@ body.filter-client {
 }
 
 .right-section h3 {
-    font-weight: bold; 
+    font-weight: bold;
 }
 
 /* CSS para pantallas medianas */
@@ -121,56 +123,72 @@ body.filter-client {
         box-shadow: none;
         text-align: center;
     }
+
     .right-section .btn {
-        width: 100%; 
-        margin: 0 auto; 
+        width: 100%;
+        margin: 0 auto;
     }
 }
+
 /* CSS para pantallas más pequeñas */
 @media (max-width: 576px) {
     .login-container {
         width: 100%;
-        max-width: none; 
-        min-height: auto; 
+        max-width: none;
+        min-height: auto;
     }
 
     .right-section {
         padding: 15px;
         font-size: 14px;
-        text-align: center; /* Ajustar el tamaño de la fuente si es necesario */
+        text-align: center;
+        /* Ajustar el tamaño de la fuente si es necesario */
     }
+
     .right-section .btn {
-        width: 100%; /* Ajusta el botón si es necesario */
-        margin: 0 auto; /* Centra el botón si es necesario */
+        width: 100%;
+        /* Ajusta el botón si es necesario */
+        margin: 0 auto;
+        /* Centra el botón si es necesario */
     }
 }
 
 /* pagina filtrado clientes */
 
 .card-img-top {
-    width: 100%; /* Ancho de la imagen */
-    height: 100px; /* Altura fija para mantener las imágenes uniformes */
-    object-fit: contain; /* Ajusta la imagen para cubrir el área sin deformarse */
-    overflow: hidden; /* Oculta el desbordamiento */
+    width: 100%;
+    /* Ancho de la imagen */
+    height: 100px;
+    /* Altura fija para mantener las imágenes uniformes */
+    object-fit: contain;
+    /* Ajusta la imagen para cubrir el área sin deformarse */
+    overflow: hidden;
+    /* Oculta el desbordamiento */
     padding: 10px;
     background-color: #f8f9fa;
 
 }
 
 .card a {
-    display: block; /* Hace que el enlace ocupe toda la tarjeta */
-    text-decoration: none; /* Elimina el subrayado enlace */
+    display: block;
+    /* Hace que el enlace ocupe toda la tarjeta */
+    text-decoration: none;
+    /* Elimina el subrayado enlace */
 }
 
 .card {
-    border: 1px solid #ddd; /* Borde de la tarjeta */
-    border-radius: 5px; /* Bordes redondeados más sutiles */
-    border-radius: 5px; 
-    overflow: hidden; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añade una sombra suave para un efecto de realce */
+    border: 1px solid #ddd;
+    /* Borde de la tarjeta */
+    border-radius: 5px;
+    /* Bordes redondeados más sutiles */
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    /* Añade una sombra suave para un efecto de realce */
 }
+
 /* div que muestra mensajes de error en las conexiones  */
-.result{
+.result {
     margin-top: 15px;
     display: none;
     color: #ff4d4d;
@@ -182,11 +200,13 @@ body.filter-client {
     font-size: large;
     text-align: center;
 }
+
 /* pagina listado deudas */
 table th {
     font-weight: 600;
 }
-table td {
-    font-weight: 400; /* grosor de la fuente */
-}
 
+table td {
+    font-weight: 400;
+    /* grosor de la fuente */
+}

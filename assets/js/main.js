@@ -3,6 +3,7 @@
 import { handleLoginSubmit } from "./login.js";
 import { fetchDeudas } from "./api.js";
 import { showResult, hideResult } from "./utils.js";
+import { loadImageFromUrl } from "./probando.js"; //probando pasar img desde filtradoclientes a listadodeudas
 // import { validarRut } from './validation.js'; aun sin uso.
 
 const d = document;
@@ -34,5 +35,8 @@ d.addEventListener("DOMContentLoaded", function () {
   }
 
     //otras páginas por manejar
+//probando pasar una img desde filtradoClientes a listadoDeudas
+    loadImageFromUrl('img'); 
+
 
 });

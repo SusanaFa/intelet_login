@@ -52,6 +52,11 @@ body.filter-client {
     font-size: 40px;
 }
 
+/* contenedor con la imagen de la empresa que cobra en la página de listadoDeudas */
+#image-container img {
+    max-width: 100px; 
+    height: auto;     
+}
 /* .container h3{
 
 } */
@@ -140,7 +145,7 @@ body.filter-client {
     .left-section {
         display: none;
     }
-    
+
     .right-section {
         padding: 15px;
         font-size: 14px;

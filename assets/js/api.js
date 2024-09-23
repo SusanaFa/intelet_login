@@ -1,8 +1,8 @@
-//deudas.js 
+//api.js 
 
 import { appendDeudaRow, setupCheckboxes, showResult } from './utils.js';
 
-const d = document;
+// const d = document;
 
 export async function fetchDeudas(deudaList, pagarBtn) {
     try {
@@ -17,6 +17,6 @@ export async function fetchDeudas(deudaList, pagarBtn) {
         setupCheckboxes(pagarBtn);
     } catch (error) {
         console.error('Error fetching deudas:', error);
-        showResult("No se pudieron cargar las deudas. Intente nuevamente más tarde.");
+        showResult("No se pudieron cargar las deudas. Intente nuevamente más tarde.", 'result-debts');
     }
 }

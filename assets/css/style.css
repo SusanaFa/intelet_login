@@ -5,10 +5,10 @@ body, html {
 
 /* probando color de fondo en página de clientes. pero no me gustó
 /* lo dejaré aquí por si acaso, para no olvidar la sintaxis */
-/* 
+
 body.filter-client {
     background-color: #f0f4f8; 
-} */
+}
 
 @font-face {
     font-family: 'Work Sans'; 
@@ -18,11 +18,26 @@ body.filter-client {
 }
 
 .container-fluid {
+    
     display: flex;
     align-items: center;
     justify-content: center;
     min-height: 100vh;
+}
 
+.my-class{
+    background-color:  #f7f7f7;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(4, 19, 41, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 1200px;
+    min-height: auto;
+    padding: 20px;
+    margin:40px auto;
 }
 .container {
     font-family: 'Work Sans', sans-serif;
@@ -41,7 +56,7 @@ body.filter-client {
 } */
 /* pagina login y registro */
 .left-section {
-    background-image: url('./intelet/MATERIAL_DE_PRUEBA/logo_tr.png');
+    background-image: url('../img/MATERIAL_DE_PRUEBA/logo_tr.png');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -90,7 +105,7 @@ body.filter-client {
     font-weight: bold; 
 }
 
-/* CSS para pantallas pequeñas/ medianas */
+/* CSS para pantallas medianas */
 @media (max-width: 768px) {
     .login-container {
         flex-direction: column;
@@ -144,7 +159,7 @@ body.filter-client {
 
 .card a {
     display: block; /* Hace que el enlace ocupe toda la tarjeta */
-    text-decoration: none; /* Elimina el subrayado del enlace */
+    text-decoration: none; /* Elimina el subrayado enlace */
 }
 
 .card {
@@ -154,12 +169,24 @@ body.filter-client {
     overflow: hidden; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Añade una sombra suave para un efecto de realce */
 }
-
+/* div que muestra mensajes de error en las conexiones  */
+.result{
+    margin-top: 15px;
+    display: none;
+    color: #ff4d4d;
+    background-color: #ffe6e6;
+    padding: 10px;
+    border: 1px solid #ffcccc;
+    border-radius: 5px;
+    font-weight: 400;
+    font-size: large;
+    text-align: center;
+}
 /* pagina listado deudas */
 table th {
     font-weight: 600;
 }
 table td {
-    font-weight: 400; /* Ajusta el grosor de la fuente a un valor más ligero */
+    font-weight: 400; /* grosor de la fuente */
 }
 

@@ -1,6 +1,7 @@
 //login.js
 
-import { showResult, validarRut } from './utils.js';
+import { showResult, hideResult} from './utils.js';
+import { validarRut } from './validation.js';
 
 const d = document;
 
@@ -16,20 +17,21 @@ export function handleLoginSubmit(e) {
    try {
     const rutRegex = /^[0-9]{1,2}\.[0-9]{3}\.[0-9]{3}-[0-9Kk]{1}$/;
     if (!rutRegex.test(rutValue)) {
-        showResult("Formato de RUT inválido");
+        showResult("Formato de RUT inválido", 'result-login');
         return;
     }
 
     // Validar el RUT
     if (validarRut(rutValue)) {
-        showResult("RUT válido");
+        hideResult('result-login')
+        // showResult("RUT válido", 'result-login');
         window.location.href = "listadoDeudas.html";
     } else {
-        showResult("RUT inválido");
+        showResult('RUT inválido', 'result-login');
     }
 } catch (error) {
     console.error('Error en la validación del rut: ', error);
-    showResult("ocurrió un error al validar el RUT. intente nuevamente.");
+    showResult("ocurrió un error al validar el RUT. intente nuevamente.", 'result- login');
     
 
 }

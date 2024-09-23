@@ -2,11 +2,38 @@
 
 const d = document;
 
-export function showResult(message) {
-    // const resultElement = d.getElementById('result');
-    const resultElements = d.querySelectorAll('.result');
-    resultElement.textContent = message;
-}
+export function showResult(message,id) {
+    console.log('mostrando el error ', message );
+    console.log('ID pasado a la función showResult' , id);
+    
+    
+    const resultElement = d.getElementById(id);
+    
+    if(resultElement){
+        resultElement.style.display = 'block';
+        resultElement.textContent = message;
+        console.log('mostrando el div con ID: ', id);
+        
+      
+    }else {
+        console.error('No se encontró el elemento con ID:', id);
+    }
+  
+};
+
+export function hideResult(id){
+    const resultElement =d.getElementById(id);
+    if(resultElement){
+        resultElement.style.display = 'none';
+        console.log('ocultando el div con ID: ', id);
+        
+    } else {
+        console.error('No se encontró el elemento con ID: ', id);
+        
+    }
+    
+};
+
 
 export function validarRut(rut) {
     rut = rut.replace(/\./g, '').replace('-', '').trim();
@@ -15,7 +42,7 @@ export function validarRut(rut) {
 
     if (cuerpo.length < 7) {
         return false;
-    }
+    };
 
     let suma = 0;
     let multiplo = 2;
@@ -23,13 +50,13 @@ export function validarRut(rut) {
     for (let i = cuerpo.length - 1; i >= 0; i--) {
         suma += multiplo * rut.charAt(i);
         multiplo = (multiplo === 7) ? 2 : multiplo + 1;
-    }
+    };
 
     const dvEsperado = 11 - (suma % 11);
     let dvCalculado = (dvEsperado === 11) ? '0' : (dvEsperado === 10) ? 'K' : dvEsperado.toString();
 
     return dv === dvCalculado;
-}
+};
 
 export function appendDeudaRow(deudaList, deuda) {
     const row = d.createElement('tr');
